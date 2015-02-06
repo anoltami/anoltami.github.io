@@ -327,33 +327,53 @@
 <script type="text/javascript">
 	$(function() {
 
-		$('#bloc-4').one('inview', function(event, visible){
+		$('#bloc-4').bind('inview', function(event, visible, visiblePartX, visiblePartY){
+			_this = $(this);
 			if(visible){
-				$(this).addClass('fadeInRight');
+				if(visiblePartY != 'top' && visiblePartY != 'bottom'){
+					_this.addClass('fadeInRight');
+					_this.unbind('inview');				
+				}
 			}
 		});
 
-		$('#bloc-5').one('inview', function(event, visible){
+		$('#bloc-5').bind('inview', function(event, visible, visiblePartX, visiblePartY){
+			_this = $(this);
 			if(visible){
-				$(this).addClass('fadeInLeft');
+				if(visiblePartY != 'top' && visiblePartY != 'bottom'){
+					_this.addClass('fadeInLeft');
+					_this.unbind('inview');				
+				}
 			}
 		});
 
-		$('#bloc-7').one('inview', function(event, visible){
+		$('#bloc-7').bind('inview', function(event, visible, visiblePartX, visiblePartY){
+			_this = $(this);
 			if(visible){
-				$(this).addClass('bounceIn');
-			}
+				if(visiblePartY != 'top' && visiblePartY != 'bottom'){
+					_this.addClass('bounceIn');
+					_this.unbind('inview');				
+				}
+			}	
 		});
 
-		$('#bloc-9').one('inview', function(event, visible){
+		$('#bloc-9').bind('inview', function(event, visible, visiblePartX, visiblePartY){
+			_this = $(this);
 			if(visible){
-				$(this).addClass('fadeIn');
-			}
+				if(visiblePartY != 'top' && visiblePartY != 'bottom'){
+					_this.addClass('fadeIn');
+					_this.unbind('inview');				
+				}
+			}	
 		});
 
-		$('#bloc-11').one('inview', function(event, visible){
+		$('#bloc-11').bind('inview', function(event, visible, visiblePartX, visiblePartY){
+			_this = $(this);
 			if(visible){
-				$(this).addClass('fadeInRight');
+				if(visiblePartY != 'top' && visiblePartY != 'bottom'){
+					_this.addClass('fadeInRight');
+					_this.unbind('inview');				
+				}
 			}
 		});
 
@@ -363,7 +383,7 @@
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-57312855-1', 'auto');
   ga('send', 'pageview');
